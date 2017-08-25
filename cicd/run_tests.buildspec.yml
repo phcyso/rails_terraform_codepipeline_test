@@ -17,8 +17,9 @@ phases:
   pre_build:
     commands:
       - echo "Pre build steps"
+      - gem install bundler
       - bundle install
   build:
     commands:
       - echo "Runnings the tests"
-      - bundle exec rake spec
+      - bundle exec rspec
