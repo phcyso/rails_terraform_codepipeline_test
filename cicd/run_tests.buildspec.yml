@@ -1,0 +1,23 @@
+version: 0.2
+
+env:
+  variables:
+    build_version: "0.1"
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies"
+      - apt-get install software-properties-common
+      - apt-add-repository ppa:brightbox/ruby-ng
+      - sudo apt-get update
+      - apt-get install ruby2.4 ruby-switch
+      - ruby-switch --set ruby2.4
+  pre_build:
+    commands:
+      - echo "Pre build steps"
+      - bundle install
+  build:
+    commands:
+      - echo "Runnings the tests"
+      - bundle exec rake spec
