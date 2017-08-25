@@ -8,9 +8,10 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
+      - apt-get update
       - apt-get install software-properties-common
       - apt-add-repository ppa:brightbox/ruby-ng
-      - sudo apt-get update
+      - apt-get update
       - apt-get install ruby2.4 ruby-switch
       - ruby-switch --set ruby2.4
   pre_build:
