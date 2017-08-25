@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    build_version: "0.1"
+    rails_env: "test"
 
 phases:
   install:
@@ -12,7 +12,7 @@ phases:
       - apt-get install software-properties-common build-essential -yy
       - apt-add-repository ppa:brightbox/ruby-ng
       - apt-get update
-      - apt-get install rubygems ruby2.4 ruby2.4-dev ruby-switch -yy
+      - apt-get install ruby2.4 ruby2.4-dev ruby-switch -yy
       - ruby-switch --set ruby2.4
   pre_build:
     commands:
